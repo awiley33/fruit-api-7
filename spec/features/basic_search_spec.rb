@@ -40,12 +40,11 @@ RSpec.describe "Basic Search" do
 
     it "displays nutritional information about that fruit" do
       #  - nutrition value, organized as: 
-      #    "Calories: x
+      #    Calories: x
       #    Fat: x
       #    Sugar: x
       #    Carbohydrates: x
       #    Protein: x
-      #    "
       expect(page).to have_content("Calories: 96 kcal")
       expect(page).to have_content("Fat: 0.2 g")
       expect(page).to have_content("Sugar: 17.2 g")
