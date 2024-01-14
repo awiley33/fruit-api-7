@@ -52,11 +52,4 @@ RSpec.describe "Basic Search" do
       expect(page).to have_content("Protein: 1.0 g")
     end
   end
-
-  context "unsuccessful search" do
-    before do
-      fill_in 'search', with: 'Taco'
-      click_button "Search"
-    end
-  end
 end
