@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# User Story 1 - Basic Search
 RSpec.describe "Basic Search" do
   before do
     # As a user,
@@ -22,7 +23,7 @@ RSpec.describe "Basic Search" do
 
     it "routes to the '/fruits' page" do
       # I am taken to the "/fruits" page
-      expect(current_path).to eq(fruits_path)
+      expect(current_path).to eq("/fruits")
     end
   
     it "displays taxonomic information about that fruit" do

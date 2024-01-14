@@ -1,28 +1,39 @@
 require 'rails_helper'
 
+# User Story 2 - Nutritional Value
 RSpec.describe "Nutritional Value Search" do
   before do
     visit "/"
     fill_in 'search', with: 'Banana'
     click_button "Search"
+    # As a user, 
+    # When I am on a search result page "/fruits"
+    # after making a successful search,
   end
 
-  
+  describe "link to find similar fruits by nutrition" do
+    it "exists" do
+      # I see a link that says "Find Similar Fruits by Nutrition Value" 
+      expect(page).to have_link("Find Similar Fruits by Nutrition Value")
+    end
+
+    it "routes to the 'fruits/nutritional' page" do
+      # When I click this link
+      click_link("Find Similar Fruits by Nutrition Value")
+      # I am taken to a "/fruits/nutritional" page
+      expect(current_path).to eq("/fruits/nutritional")
+    end
+
+    it "displays the names of the fruits of a similar nutritional value" do
+      click_link("Find Similar Fruits by Nutrition Value")
+
+      # Where I see the names of fruits that have a similar nutritional value
+      expect(page).to have_content("Banana")
+      expect(page).to have_content("Passionfruit")
+      expect(page).to have_content("Jackfruit")
+    end
+  end
 end
-
-# ### User Story 2 - Nutritional Value
-
-# ```
-# As a user, 
-# When I am on a search result page "/fruits"
-# after making a successful search, 
-# I see a link that says "Find Similar Fruits by Nutrition Value" 
-# When I click this link
-# I am taken to a "/fruits/nutritional" page
-# Where I see the names of fruits that have a similar nutritional value
-
-# # Hint: choose a specific nutritional key (e.g. "calories" or "fat" or "sugar"), and use the min/max API endpoints
-# ```
 
 # ### User Story 3 - Clickable Names
 
