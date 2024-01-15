@@ -1,0 +1,7 @@
+<h1>Fruits of Similar Nutritional Value</h1><br>
+
+<% @fruits.each do |fruit| %>
+  <ul>
+    <%= link_to fruit.name, fruits_path(search: fruit.name) %>
+  </ul>
+<% end %>

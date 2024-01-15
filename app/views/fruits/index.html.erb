@@ -1,0 +1,15 @@
+<h1>Fruit Information</h1>
+
+<h2><%= @fruit.name %></h2>
+
+Family: <%= @fruit.family %><br>
+Order: <%= @fruit.order %><br>
+Genus: <%= @fruit.genus %><br>
+<h3>Nutritional Value:</h3>
+Calories: <%= @fruit.calories %> kcal<br> 
+Fat: <%= @fruit.fat %> g<br>
+Sugar: <%= @fruit.sugar %> g<br>
+Carbohydrates: <%= @fruit.carbohydrates %> g<br>
+Protein: <%= @fruit.protein %> g<br><br>
+
+<%= link_to 'Find Similar Fruits by Nutrition Value', fruits_nutritional_path(calories: @fruit.calories) %>
